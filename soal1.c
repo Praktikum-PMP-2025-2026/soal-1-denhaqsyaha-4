@@ -93,10 +93,12 @@ void deltData (list** head, int x) {
     list* temp = *head;
     int idx = 0;
     int sum = 0;
+    
     while (temp != NULL) {
         sum++;
         temp = temp->next;
     }
+    temp = *head;
     while (temp != NULL) {
         idx++;
         if (temp->n == x) {
