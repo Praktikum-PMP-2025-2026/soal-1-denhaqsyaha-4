@@ -16,13 +16,13 @@ typedef struct list {
 } list;
 
 void pushlBack (list** head, int x);
-
+// Memasukkan data ke belakang linked list
 void pushFront (list** head, int x);
-
+// Memasukkan data ke depan linked list
 void deltData (list** head, int x);
-
+// Menghapus data apabila ada
 void findData (list** head, int x);
-
+// Mencari lokasi indeks data apabila ada
 int main (void) {
     int loop;
     scanf("%d", &loop);
@@ -93,7 +93,6 @@ void deltData (list** head, int x) {
     list* temp = *head;
     int idx = 0;
     int sum = 0;
-    
     while (temp != NULL) {
         sum++;
         temp = temp->next;
@@ -105,6 +104,9 @@ void deltData (list** head, int x) {
             break;
         }
         temp = temp->next;
+    }
+    if (idx == sum) {
+        idx = 0;
     }
     temp = *head;
     if (sum == 1 && idx == 1) {
@@ -121,7 +123,7 @@ void deltData (list** head, int x) {
         *head = temp->next;
         temp->next = NULL;
         free(temp);
-    } else if (sum != 1) {
+    } else if (sum != 1 && idx != 0) {
         int count = 1;
             while ((idx - 1) != count) {
             temp = temp->next;
