@@ -51,7 +51,7 @@ int main (void) {
             temp = temp->next;
         }
     } else {
-        printf("EMPTY");
+        printf(" EMPTY");
     }
 }
 
