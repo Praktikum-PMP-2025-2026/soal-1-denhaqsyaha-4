@@ -95,8 +95,12 @@ void deltData (list** head, int x) {
     int sum = 0;
     while (temp != NULL) {
         sum++;
+        temp = temp->next;
+    }
+    while (temp != NULL) {
+        idx++;
         if (temp->n == x) {
-            idx = sum;
+            break;
         }
         temp = temp->next;
     }
